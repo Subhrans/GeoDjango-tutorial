@@ -1,1 +1,1 @@
-default_app_config="GeoDjango.apps.GeodjangoConfig"
+default_app_config = "GeoDjango.apps.GeodjangoConfig"

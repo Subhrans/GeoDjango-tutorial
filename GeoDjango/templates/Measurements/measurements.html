@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{block.super}}
+Measurements
+{% endblock %}
+{% block content %}
+{{distance}}
+<hr>
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+{% endblock %}
