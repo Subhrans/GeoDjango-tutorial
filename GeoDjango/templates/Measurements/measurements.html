@@ -10,9 +10,15 @@ Measurements
 <form action="" method="POST" autocomplete="off">
     {% csrf_token %}
     {{form.as_p}}
+    {% if internet_error != True %}
     <button class="btn btn-success" type="submit">Submit</button>
+    {% endif %}
 </form>
+{% if internet_error != True %}
 {{map|safe}}
+{% else %}
+{{internet_error}}
+{% endif %}
 <br>
 This product includes GeoLite2 data created by MaxMind, available from
 <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
